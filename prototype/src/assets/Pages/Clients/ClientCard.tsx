@@ -36,6 +36,10 @@ function ClientCard() {
                         <span className="detail-label">Phone:</span>
                         <span className="detail-value">(555) 123-4567</span>
                     </div>
+                    <div className="client-detail">
+                        <span className="detail-label">Program:</span>
+                        <span className="detail-value">1 to 1 Coaching</span>
+                    </div>
                 </div>
             </div>
         </div>
