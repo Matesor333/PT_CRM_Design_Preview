@@ -1,6 +1,7 @@
 import Header from "../../../Header.tsx";
 import Navigation from "../../../Navigation.tsx";
 import ClientInformation from "./ClientInformation.tsx";
+import Goals from "./ClientsGoals.tsx";
 function SpecificClientPage() {
 
     return(
@@ -11,6 +12,7 @@ function SpecificClientPage() {
                 <div className="dashboard-content">
                     <div className="dashboard-grid">
                         <ClientInformation/>
+                        <Goals/>
                     </div>
                 </div>
             </div>

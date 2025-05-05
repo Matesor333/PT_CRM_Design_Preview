@@ -10,9 +10,15 @@ function ClientInformation(){
                 <FontAwesomeIcon icon={faUser} />
                 <span>Client Information</span>
             </div>
-            <div className="EmailInfo">
-                <span className="detail-label">Email:</span>
-                <span className="detail-value">john.smith@example.com</span>
+            <div className="MedicalInfo">
+                <span className="detail-label">Age:</span>
+                <span className="detail-value">46 (01.01.1979) </span>
+            </div>
+            <div className="height-weight-info">
+                <span className="detail-label">Height:</span>
+                <span className="detail-value">197cm</span>
+                <span className="detail-label">Weight:</span>
+                <span className="detail-value">90kg</span>
             </div>
             <div className="MedicalInfo">
                 <span className="detail-label">Medical Info:</span>
