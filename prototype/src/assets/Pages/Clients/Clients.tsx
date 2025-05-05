@@ -3,6 +3,7 @@ import Header from "../../Header.tsx";
 import Navigation from "../../Navigation.tsx";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus, faSearch } from '@fortawesome/free-solid-svg-icons';
+import { Link, useLocation } from "react-router-dom";
 
 function Clients() {
     return (
@@ -32,6 +33,9 @@ function Clients() {
                         </div>
                     </div>
                     <div className="clients-grid">
+                        <Link to="/prototype/src/assets/Pages/Clients/SpecificClient/SpecificClientPage.tsx">
+                            <ClientCard />
+                        </Link>
                         <ClientCard />
                         <ClientCard />
                         <ClientCard />

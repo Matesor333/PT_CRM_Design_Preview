@@ -2,6 +2,7 @@ import { useState } from "react";
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import DashBoard from "./assets/Pages/DashBoard/DashBoard.tsx";
 import Clients from "./assets/Pages/Clients/Clients.tsx";
+import SpecificClientPage from "./assets/Pages/Clients/SpecificClient/SpecificClientPage.tsx";
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
         <Route path="/dashboard" element={<DashBoard />} />
         <Route path="/clients" element={<Clients />} />
         <Route path="/" element={<Navigate to="/dashboard" replace />} />
+          <Route path="prototype/src/assets/Pages/Clients/SpecificClient/SpecificClientPage.tsx" element={<SpecificClientPage/>}/>
       </Routes>
     </Router>
   );
