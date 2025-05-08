@@ -5,9 +5,9 @@ function UpcomingSesion() {
 
         <div className="Upcoming_Sesion">
 
-            <h3>Upcoming Sesion</h3>
+            <h3> REVENUE THIS MONTH</h3>
             <h2>0</h2>
-            <a href="#">View upcoming schedule</a>
+            <a href="#">View</a>
         </div>
 
     );
