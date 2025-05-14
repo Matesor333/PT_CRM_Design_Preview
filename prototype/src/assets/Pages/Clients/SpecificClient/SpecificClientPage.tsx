@@ -1,12 +1,18 @@
 
 import ClientInformation from "./ClientInformation.tsx";
 import Goals from "./ClientsGoals.tsx";
+import ClientOverwie from "./ClientOverwie.tsx";
+
+
 function SpecificClientPage() {
 
     return(
         <div className="dashboard-grid">
             <ClientInformation/>
             <Goals/>
+
+            <ClientOverwie/>
+
         </div>
     )
 }

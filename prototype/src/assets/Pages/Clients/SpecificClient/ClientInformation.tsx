@@ -3,6 +3,19 @@ import {
     faUser
 } from '@fortawesome/free-solid-svg-icons';
 function ClientInformation(){
+
+
+
+    const clientInforamtion={
+
+        age:"46 (01.01.1979)",
+        heightMetric:"197",
+        weightMetric:"90",
+        medicalInfo:"I will kill my self soon",
+        status:"active",
+        clientSince:"Inavlid Date"
+
+    }
     return(
         <div className="ClientInformation">
 
@@ -12,26 +25,26 @@ function ClientInformation(){
             </div>
             <div className="MedicalInfo">
                 <span className="detail-label">Age:</span>
-                <span className="detail-value">46 (01.01.1979) </span>
+                <span className="detail-value">{clientInforamtion.age} </span>
             </div>
             <div className="height-weight-info">
                 <span className="detail-label">Height:</span>
-                <span className="detail-value">197cm</span>
+                <span className="detail-value">{clientInforamtion.heightMetric} CM </span>
                 <span className="detail-label">Weight:</span>
-                <span className="detail-value">90kg</span>
+                <span className="detail-value">{clientInforamtion.weightMetric} KG</span>
             </div>
             <div className="MedicalInfo">
                 <span className="detail-label">Medical Info:</span>
-                <span className="detail-value">I will kill myself when coding this</span>
+                <span className="detail-value">{clientInforamtion.medicalInfo}</span>
             </div>
             <div className="StatusInfo">
                 <span className="detail-label">Status:</span>
-                <span className="detail-value">Active</span>
+                <span className="detail-value">{clientInforamtion.status}</span>
             </div>
 
             <div className="Time">
                 <span className="detail-label">Client Since:</span>
-                <span className="detail-value">Invalid Date</span>
+                <span className="detail-value">{clientInforamtion.clientSince}</span>
             </div>
 
 

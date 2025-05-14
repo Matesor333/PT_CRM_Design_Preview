@@ -5,6 +5,13 @@ import {faBook} from "@fortawesome/free-solid-svg-icons";
 function Goals(){
 
 
+
+    const clientGoalsData = {
+        goals: [
+            "Get in shape",
+            "Loose 10 KG"
+        ]
+    };
     return(
         <div className="goals-card">
             <div className="goals-title">
@@ -12,14 +19,11 @@ function Goals(){
                     <FontAwesomeIcon icon={faBook} />Goals
                 </span>
             </div>
-            <div className="goals">
-                <span>Get in shape</span>
-
-            </div>
-            <div className="goals">
-                <span>Loose 10 kg</span>
-
-            </div>
+            {clientGoalsData.goals.map((goal, index) => (
+                <div className="goals" key={index}>
+                    <span>{goal}</span>
+                </div>
+            ))}
 
 
 
