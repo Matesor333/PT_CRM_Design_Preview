@@ -8,44 +8,51 @@ function ProgressMetricsChart() {
         {
             week: '38',
             chest: 4000, // Baseline week
-            arms: 2400,
+            arms: 240,
             legs: 2400,
+            back:3500,
         },
         {
             week: '39',
             chest: 4150, // Small increase in chest volume
-            arms: 2450, // Slight arms progression
-            legs: 2500, // Starting to focus on legs
+            arms: 245, // Slight arms progression
+            legs: 2500,
+            back:3550,// Starting to focus on legs
         },
         {
             week: '40',
             chest: 4300, // Continued chest progress
-            arms: 2550, // Steady arms progression
-            legs: 2650, // Good leg improvement
+            arms: 255, // Steady arms progression
+            legs: 2650,
+            back:3550,// Good leg improvement
         },
         {
             week: '41',
             chest: 4250, // Slight decrease (deload week)
-            arms: 2700, // Arms still improving despite chest deload
-            legs: 2800, // Strong leg progress
+            arms: 270, // Arms still improving despite chest deload
+            legs: 2800,
+            back:3560,// Strong leg progress
         },
         {
             week: '42',
             chest: 4450, // Post-deload rebound for chest
-            arms: 2650, // Small setback in arms (recovery needed)
-            legs: 2800, // Maintained leg performance
+            arms: 265, // Small setback in arms (recovery needed)
+            legs: 2800,
+            back:3600,// Maintained leg performance
         },
         {
             week: '43',
             chest: 4550, // Continued chest gains
-            arms: 2850, // Significant arms breakthrough after recovery
-            legs: 3000, // Big jump in leg performance
+            arms: 285, // Significant arms breakthrough after recovery
+            legs: 3000,
+            back:3650,// Big jump in leg performance
         },
         {
             week: '44',
             chest: 4700, // Peak chest performance
-            arms: 3050, // Peak arms performance
-            legs: 3200, // Strong finishing leg performance
+            arms: 305, // Peak arms performance
+            legs: 3200,
+            back:3650,// Strong finishing leg performance
         },
     ];
 
@@ -104,6 +111,12 @@ function ProgressMetricsChart() {
                                 type="monotone" 
                                 dataKey="legs" 
                                 stroke="#7D54AD"
+                                strokeWidth={3}
+                            />
+                            <Line
+                                type="monotone"
+                                dataKey="back"
+                                stroke="#E4080A"
                                 strokeWidth={3}
                             />
                         </LineChart>

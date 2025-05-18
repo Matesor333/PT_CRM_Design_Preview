@@ -16,7 +16,7 @@ function Goals(){
         <div className="goals-card">
             <div className="goals-title">
                 <span>
-                    <FontAwesomeIcon icon={faBook} />Goals
+                    <FontAwesomeIcon icon={faBook} /> <span>Goals</span>
                 </span>
             </div>
             {clientGoalsData.goals.map((goal, index) => (

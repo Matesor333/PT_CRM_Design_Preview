@@ -5,6 +5,8 @@ import Clients from "./assets/Pages/Clients/Clients.tsx";
 import SpecificClientPage from "./assets/Pages/Clients/SpecificClient/SpecificClientPage.tsx";
 import Layout from "./assets/Layout.tsx";
 
+import Callendar from "./assets/Pages/Callendar/Callendar.tsx";
+
 function App() {
   return (
     <Router>
@@ -13,7 +15,9 @@ function App() {
           <Route index element={<Navigate to="/dashboard" replace />} />
           <Route path="/dashboard" element={<DashBoard />} />
           <Route path="/clients" element={<Clients />} />
+          <Route path="/callendar" element={<Callendar/>}/>
           <Route path="prototype/src/assets/Pages/Clients/SpecificClient/SpecificClientPage.tsx" element={<SpecificClientPage/>}/>
+
         </Route>
       </Routes>
     </Router>

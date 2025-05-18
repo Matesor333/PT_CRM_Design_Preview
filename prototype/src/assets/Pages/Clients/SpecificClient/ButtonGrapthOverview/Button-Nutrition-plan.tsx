@@ -40,7 +40,10 @@ const NutritionPlan = () => {
         <div className="workout-tracker">
             {/* Current Workouts Section */}
             <div className="current-workouts">
-                <h2>Current Nutrition Plan</h2>
+                <div className="Nutrition-Plan-Tracker">
+                    <h2>Current Nutrition Plan </h2>
+                    <button className="Tracker">Tracker</button>
+                </div>
                 {currentMealPlan.map(workout => (
                     <div key={workout.id} className="workout-card">
                         <h3>{workout.week}</h3>
