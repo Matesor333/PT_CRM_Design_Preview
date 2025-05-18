@@ -203,9 +203,10 @@
 .dashboard-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-auto-rows: minmax(180px, auto);
-  gap: 24px;
+  grid-auto-rows: minmax(150px, auto);
+  gap: 20px;
   animation: fadeIn 0.5s ease-in-out;
+  margin-bottom: 40px;
 }
 
 @keyframes fadeIn {
@@ -224,7 +225,10 @@
 .quick-actions,
 .RecentClientActivity,
 .Upcoming_Sesion,
-.Pending_Tasks {
+.Pending_Tasks,
+.Alert-Card,
+.Upcoming-Tasks,
+.Upcoming-Session {
   background: #ffffff;
   border-radius: 16px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
@@ -242,7 +246,10 @@
 .quick-actions:hover,
 .RecentClientActivity:hover,
 .Upcoming_Sesion:hover,
-.Pending_Tasks:hover {
+.Pending_Tasks:hover,
+.Alert-Card:hover,
+.Upcoming-Tasks:hover,
+.Upcoming-Session:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
 }
@@ -251,7 +258,10 @@
 .quick-actions::before,
 .RecentClientActivity::before,
 .Upcoming_Sesion::before,
-.Pending_Tasks::before {
+.Pending_Tasks::before,
+.Alert-Card::before,
+.Upcoming-Tasks::before,
+.Upcoming-Session::before {
   content: '';
   position: absolute;
   top: 0;
@@ -266,7 +276,10 @@
 .quick-actions:hover::before,
 .RecentClientActivity:hover::before,
 .Upcoming_Sesion:hover::before,
-.Pending_Tasks:hover::before {
+.Pending_Tasks:hover::before,
+.Alert-Card:hover::before,
+.Upcoming-Tasks:hover::before,
+.Upcoming-Session:hover::before {
   height: 100%;
 }
 
@@ -280,7 +293,10 @@
 .quick-actions h3,
 .RecentClientActivity h3,
 .Upcoming_Sesion h3,
-.Pending_Tasks h3 {
+.Pending_Tasks h3,
+.Alert-Card h3,
+.Upcoming-Tasks h3,
+.Upcoming-Session h3 {
   font-size: 18px;
   font-weight: 600;
   color: #333;
@@ -298,6 +314,140 @@
   font-size: 14px;
   color: #4CAF50;
   margin: 0;
+}
+
+/* Alert Card, Upcoming Tasks, and Upcoming Session styling */
+.Allert-Body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.Allert-Body span {
+  display: block;
+  padding: 10px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #555;
+  transition: all 0.2s ease;
+}
+
+.Allert-Body span:hover {
+  background-color: #f0f2f5;
+  transform: translateX(5px);
+}
+
+.Heder-Tasks, .Heder-Sessions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.Heder-Tasks select, .Heder-Sessions select {
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: 1px solid #e0e0e0;
+  background-color: #fff;
+  font-size: 14px;
+  color: #555;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.Heder-Tasks select:hover, .Heder-Sessions select:hover {
+  border-color: #4285F4;
+}
+
+.Alert-Header {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 10px 10px;
+  border-bottom: 1px solid #eee;
+  font-weight: 600;
+  font-size: 14px;
+  color: #666;
+}
+
+.Alert-Body-Sessions {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 10px;
+  border-bottom: 1px solid #f5f5f5;
+  transition: all 0.2s ease;
+}
+
+.Alert-Body-Sessions:hover {
+  background-color: #f8f9fa;
+}
+
+.Alert-Name, .Alert-Date, .Alert-Calenadr {
+  font-size: 14px;
+  color: #555;
+}
+
+/* Header styles from App.css */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  height: 60px;
+  background-color: #f1f1f1;
+  border-bottom: 1px solid #ddd;
+}
+
+.brand-name {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+
+.page-title {
+  font-size: 18px;
+  font-weight: normal;
+  color: #333;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.notification-icon {
+  position: relative;
+  cursor: pointer;
+}
+
+.notification-icon .badge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background-color: #4285F4;
+  color: white;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+}
+
+.user-initials {
+  background-color: #f8f8f8;
+  color: #333;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  cursor: pointer;
+  border: 1px solid #ddd;
 }
 
 /* Quick actions styling */
@@ -585,4 +735,303 @@
 
 .detail-value {
   color: #333;
+}
+
+/* Specific Client Page Styles */
+.specific-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  padding: 16px 0;
+  position: relative;
+  border-bottom: 2px solid #4285F4;
+}
+
+.specific-footer h2 {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 22px;
+  font-weight: 600;
+  margin: 0;
+  padding: 0 20px;
+
+}
+
+.back-button {
+  background: #f5f6fa;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-size: 15px;
+  font-weight: 500;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  margin-right: auto; /* Pushes the button to the left */
+}
+
+.back-button:hover {
+  background: #e8e8e8;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.schedule-sesion {
+  background: #f5f6fa;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-size: 15px;
+  font-weight: 500;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  margin-right: 16px; /* Space between the schedule button and new task button */
+}
+
+.schedule-sesion:hover {
+  background: #e8e8e8;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.new-task {
+  background: #e8f0fe; /* Light blue color */
+  border: none;
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-size: 15px;
+  font-weight: 500;
+  color: #4285F4;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.new-task:hover {
+  background: #d2e3fc;
+  box-shadow: 0 4px 10px rgba(66, 133, 244, 0.2);
+}
+
+/* Client Information, Goals, and Nutrition Wheel Styles */
+.ClientInformation,
+.goals-card {
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(0, 0, 0, 0.03);
+  position: relative;
+  overflow: hidden;
+  height: auto;
+  max-height: 350px;
+}
+
+.ClientInformation:hover,
+.goals-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+.ClientInformation::before,
+.goals-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 0;
+  background: linear-gradient(135deg, #4285F4, #34a853);
+  transition: height 0.3s ease;
+}
+
+.ClientInformation:hover::before,
+.goals-card:hover::before {
+  height: 100%;
+}
+
+.info,
+.goals-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.height-weight-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.MedicalInfo,
+.StatusInfo,
+.Time,
+.goals {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+/* Make the nutrition chart responsive */
+.recharts-responsive-container {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* Client Overview Styles */
+.Client-Overview {
+  width: 100%;
+  margin-top: 40px;
+}
+
+/* Style for the buttons in the client overview */
+.Head-Buttons {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.btn-Overview {
+  background: #f5f6fa;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  text-align: center;
+}
+
+.btn-Overview:hover {
+  background: #e8e8e8;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.btn-Overview.active {
+  background: #4285F4;
+  color: white;
+  box-shadow: 0 4px 10px rgba(66, 133, 244, 0.3);
+}
+
+/* Style for the graph */
+.chart-container {
+  width: 100%;
+  margin: 0 auto;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  border-radius: 16px;
+  background: white;
+  padding: 24px;
+  margin-bottom: 24px;
+  transition: all 0.3s ease;
+}
+
+.chart-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+.Client-Overview .recharts-wrapper {
+  width: 100% !important;
+  margin: 0 auto;
+}
+
+/* Style for the sessions and tasks grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-top: 24px;
+}
+
+/* Workout Plan Styles */
+.workout-tracker {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  width: 100%;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.current-workouts,
+.past-workouts {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.current-workouts h2,
+.past-workouts h2 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #4285F4;
+}
+
+.workout-card {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  padding: 20px;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(0, 0, 0, 0.03);
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+
+.workout-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+.workout-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 0;
+  background: linear-gradient(135deg, #4285F4, #34a853);
+  transition: height 0.3s ease;
+}
+
+.workout-card:hover::before {
+  height: 100%;
+}
+
+.workout-card h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #4285F4;
+  margin: 0 0 12px 0;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.workout-card p {
+  font-size: 14px;
+  color: #555;
+  margin: 8px 0;
+  display: flex;
+  align-items: center;
+}
+
+.workout-card p:first-of-type {
+  font-weight: 500;
 }

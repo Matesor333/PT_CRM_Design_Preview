@@ -1,6 +1,7 @@
-import ProgressMetricsChart from "./Button-Overview.tsx";
-import WorkoutTracker from "./Button-Workout-Plan.tsx";
+import ProgressMetricsChart from "./ButtonGrapthOverview/Button-Overview.tsx";
+import WorkoutTracker from "./ButtonGrapthOverview/Button-Workout-Plan.tsx";
 import { useState } from "react";
+import NutritionPlan from "./ButtonGrapthOverview/Button-Nutrition-plan.tsx";
 
 function ClientOverwie() {
     const [activeView, setActiveView] = useState("overview");
@@ -44,6 +45,7 @@ function ClientOverwie() {
 
             {activeView === "overview" && <ProgressMetricsChart />}
             {activeView === "workout" && <WorkoutTracker />}
+            {activeView==="nutrition" && <NutritionPlan />}
             {/* Add other views as they become available */}
 
         </div>

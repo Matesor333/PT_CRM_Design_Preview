@@ -47,7 +47,7 @@ const CustomTooltip = ({ active, payload }: { active?: boolean; payload?: any[] 
 
 const NutritionChart = () => {
     return (
-        <ResponsiveContainer width="100%" height={400}>
+        <ResponsiveContainer width="100%" height={350}>
             <PieChart>
                 {/* Inner pie for calories */}
                 <Pie
@@ -87,4 +87,3 @@ const NutritionChart = () => {
 };
 
 export default NutritionChart;
-

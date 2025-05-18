@@ -9,13 +9,23 @@ import NutritionChart from "./ClientNutritionWheel.tsx";
 function SpecificClientPage() {
 
     return(
-        <div className="dashboard-grid">
-            <ClientInformation/>
-            <Goals/>
-            <NutritionChart/>
-            <ClientOverwie/>
+        <>
+            <div className="specific-footer">
+                <button className="back-button">Back</button>
+                <h2>Jhon Smith</h2>
+                <button className="schedule-sesion">Schedule Session</button>
+                <button className="new-task">New Task</button>
+            </div>
+            <div className="dashboard-grid">
 
-        </div>
+                <ClientInformation/>
+                <Goals/>
+                <NutritionChart/>
+
+
+            </div>
+            <ClientOverwie/>
+        </>
     )
 }
 export default SpecificClientPage;
