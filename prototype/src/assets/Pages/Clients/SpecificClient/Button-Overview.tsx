@@ -1,41 +1,77 @@
-import { LineChart } from '@mui/x-charts/LineChart';
-import DB_Upcoming_Session from "../../DashBoard/Dashboard cards/DB_Upcoming_Session.tsx";
-import DB_Upcoming_Tasks from "../../DashBoard/Dashboard cards/DB_Upcoming_Tasks.tsx";
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
 
- function ProgressMetricsChart() {
-     /*const muscleProgressData = [
-         { month: 'Jan', chest: 250, back: 200, legs: 300, shoulders: 150, arms: 100 },
-         { month: 'Feb', chest: 300, back: 240, legs: 350, shoulders: 180, arms: 120 },
-         { month: 'Mar', chest: 350, back: 280, legs: 400, shoulders: 210, arms: 140 },
-         { month: 'Apr', chest: 400, back: 320, legs: 450, shoulders: 240, arms: 160 },
-         { month: 'May', chest: 450, back: 360, legs: 500, shoulders: 270, arms: 180 },
-         { month: 'Jun', chest: 500, back: 400, legs: 550, shoulders: 300, arms: 200 },
-     ];*/
 
-    return (
-        <div className="Overview-Progress">
-            <LineChart
-                xAxis={[{ data: [1, 2, 3, 5, 8, 10, 12, 15, 16] }]}
-                series={[
-                    {
-                        data: [30, 35, 35, 40, 45, 50,30, 35,40],
-                        valueFormatter: (value) => (value == null ? 'NaN' : value.toString()),
-                    },
-                    {
-                        data: [35, 30, 40, 30, 5.5, 2, 8.5, 1.5, 5],
-                    },
-                    {
-                        data: [7, 8, 5, 4, 5, 15, 2, 5.5, 1],
-                        valueFormatter: (value) => (value == null ? '?' : value.toString()),
-                    },
-                ]}
-                height={200}
-                margin={{ bottom: 10 }}
-            />
-            <div className="Overview-Bellow-Cards"></div>
-            <DB_Upcoming_Session/>
-            <DB_Upcoming_Tasks/>
-        </div>
-    )
+function ProgressMetricsChart() {
+    const data = [
+        {
+            week: '38',
+            chest: 4000, // Baseline week
+            arms: 2400,
+            legs: 2400,
+        },
+        {
+            week: '39',
+            chest: 4150, // Small increase in chest volume
+            arms: 2450, // Slight arms progression
+            legs: 2500, // Starting to focus on legs
+        },
+        {
+            week: '40',
+            chest: 4300, // Continued chest progress
+            arms: 2550, // Steady arms progression
+            legs: 2650, // Good leg improvement
+        },
+        {
+            week: '41',
+            chest: 4250, // Slight decrease (deload week)
+            arms: 2700, // Arms still improving despite chest deload
+            legs: 2800, // Strong leg progress
+        },
+        {
+            week: '42',
+            chest: 4450, // Post-deload rebound for chest
+            arms: 2650, // Small setback in arms (recovery needed)
+            legs: 2800, // Maintained leg performance
+        },
+        {
+            week: '43',
+            chest: 4550, // Continued chest gains
+            arms: 2850, // Significant arms breakthrough after recovery
+            legs: 3000, // Big jump in leg performance
+        },
+        {
+            week: '44',
+            chest: 4700, // Peak chest performance
+            arms: 3050, // Peak arms performance
+            legs: 3200, // Strong finishing leg performance
+        },
+    ];
+
+        return (
+
+                <LineChart
+                    width={500}
+                    height={300}
+                    data={data}
+                    margin={{
+                        top: 5,
+                        right: 30,
+                        left: 20,
+                        bottom: 5,
+                    }}
+                >
+                    <CartesianGrid strokeDasharray="3 3"/>
+                    <XAxis dataKey="week"/>
+                    <YAxis/>
+                    <Tooltip/>
+                    <Legend/>
+                    <Line type="monotone" dataKey="arms" stroke="#8884d8" activeDot={{r: 8}}/>
+                    <Line type="monotone" dataKey="chest" stroke="#82ca9d"/>
+                    <Line type="monotone" dataKey="legs" stroke="##7D54AD"/>
+                </LineChart>
+
+
+        )
+
 }
 export default ProgressMetricsChart;
