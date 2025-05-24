@@ -1,0 +1,369 @@
+/* Specific Client Page Styles */
+.specific-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  padding: 16px 0;
+  position: relative;
+  border-bottom: 2px solid #4285F4;
+}
+
+.specific-footer h2 {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 22px;
+  font-weight: 600;
+  margin: 0;
+  padding: 0 20px;
+}
+
+.back-button {
+  background: #f5f6fa;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-size: 15px;
+  font-weight: 500;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  margin-right: auto; /* Pushes the button to the left */
+}
+
+.back-button:hover {
+  background: #e8e8e8;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.schedule-sesion {
+  background: #f5f6fa;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-size: 15px;
+  font-weight: 500;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  margin-right: 16px; /* Space between the schedule button and new task button */
+}
+
+.schedule-sesion:hover {
+  background: #e8e8e8;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.new-task {
+  background: #e8f0fe; /* Light blue color */
+  border: none;
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-size: 15px;
+  font-weight: 500;
+  color: #4285F4;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.new-task:hover {
+  background: #d2e3fc;
+  box-shadow: 0 4px 10px rgba(66, 133, 244, 0.2);
+}
+
+/* Client Information, Goals, and Nutrition Wheel Styles */
+.ClientInformation,
+.goals-card {
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(0, 0, 0, 0.03);
+  position: relative;
+  overflow: hidden;
+  height: auto;
+  max-height: 600px;
+}
+
+.ClientInformation:hover,
+.goals-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+.ClientInformation::before,
+.goals-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 0;
+  background: linear-gradient(135deg, #4285F4, #34a853);
+  transition: height 0.3s ease;
+}
+
+.ClientInformation:hover::before,
+.goals-card:hover::before {
+  height: 100%;
+}
+
+.info,
+.goals-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.height-weight-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.MedicalInfo,
+.StatusInfo,
+.Time,
+.goals {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+/* Make the nutrition chart responsive */
+.recharts-responsive-container {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* Client Overview Styles */
+.Client-Overview {
+  width: 100%;
+  margin-top: 40px;
+}
+
+/* Style for the buttons in the client overview */
+.Head-Buttons {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.btn-Overview {
+  background: #f5f6fa;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  text-align: center;
+}
+
+.btn-Overview:hover {
+  background: #e8e8e8;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.btn-Overview.active {
+  background: #4285F4;
+  color: white;
+  box-shadow: 0 4px 10px rgba(66, 133, 244, 0.3);
+}
+
+/* Style for the graph */
+.chart-container {
+  width: 100%;
+  margin: 0 auto;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  border-radius: 16px;
+  background: white;
+  padding: 24px;
+  margin-bottom: 24px;
+  transition: all 0.3s ease;
+}
+
+.chart-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+.Client-Overview .recharts-wrapper {
+  width: 100% !important;
+  margin: 0 auto;
+}
+
+/* Style for the sessions and tasks grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-top: 24px;
+}
+
+/* Workout Plan Styles */
+.workout-tracker {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  width: 100%;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.current-workouts,
+.past-workouts {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.current-workouts h2,
+.past-workouts h2 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #4285F4;
+}
+
+.workout-card {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  padding: 20px;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(0, 0, 0, 0.03);
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+
+.workout-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+.workout-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 0;
+  background: linear-gradient(135deg, #4285F4, #34a853);
+  transition: height 0.3s ease;
+}
+
+.workout-card:hover::before {
+  height: 100%;
+}
+
+.workout-card h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #4285F4;
+  margin: 0 0 12px 0;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.workout-card p {
+  font-size: 14px;
+  color: #555;
+  margin: 8px 0;
+  display: flex;
+  align-items: center;
+}
+
+.workout-card p:first-of-type {
+  font-weight: 500;
+}
+
+/* Nutrition Plan Tracker Styles */
+.Nutrition-Plan-Tracker {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.Tracker {
+  background: #4CAF50; /* Green color */
+  border: none;
+  border-radius: 8px;
+  padding: 10px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.Tracker:hover {
+  background: #45a049; /* Darker green on hover */
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(76, 175, 80, 0.3);
+}
+
+/* Weight Chart Styles */
+.weightChart {
+  background: white;
+  border-radius: 12px;
+  padding: 15px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.weightChart:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+/* Workout Header Styles */
+.workout-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+/* Add Workout Button Styles */
+.add-workout-btn {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 15px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
+}
+
+.add-workout-btn:hover {
+  background-color: #2980b9;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}

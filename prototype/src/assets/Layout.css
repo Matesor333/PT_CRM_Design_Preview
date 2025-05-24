@@ -1,0 +1,277 @@
+/* Layout Styles */
+/* App Container */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.main-content {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+/* Side Navigation */
+.navigation-container {
+  position: relative;
+  height: 100%;
+}
+
+.nav-toggle-btn {
+  position: absolute;
+  top: 30px;
+  right: -15px;
+  z-index: 100;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+
+.nav-toggle-btn:hover {
+  background: #f5f6fa;
+  transform: scale(1.1);
+}
+
+.nav-brand {
+  font-size: 24px;
+  font-weight: bold;
+  color: #4285F4;
+  padding: 10px 10px;
+  margin-bottom: 8px;
+  white-space: none;
+}
+
+.sidenav {
+  width: auto;
+  background: #ffffff;
+  height: 100%;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  border-right: 1px solid #e0e0e0;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.03);
+  transition: all 0.5s ease;
+  overflow-y: auto;
+}
+
+.sidenav.collapsed {
+  width: 60px;
+  padding: 24px 0;
+}
+.sidenav.collapsed .nav-brand {
+  width: 60px;
+  text-align: center;
+  padding: 0px 0;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.sidenav.collapsed .nav-item span,
+.sidenav.collapsed .user-info {
+  display: none;
+}
+
+.sidenav.collapsed .nav-item a {
+  justify-content: center;
+  padding: 12px 0;
+}
+
+.sidenav.collapsed .profile {
+  justify-content: center;
+  padding: 24px 0;
+}
+
+.sidenav:hover {
+  box-shadow: 3px 0 15px rgba(0, 0, 0, 0.06);
+}
+
+.nav-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-item {
+  margin: 0 0 12px 0;
+  transition: transform 0.2s ease;
+}
+
+.nav-item:hover {
+  transform: translateX(5px);
+}
+
+.nav-item a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #555;
+  text-decoration: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.nav-item.active a {
+  background: #e8f0fe;
+  color: #4285F4;
+  font-weight: 500;
+}
+
+.nav-item a:hover {
+  background: #e8f0fe;
+  color: #4285F4;
+}
+
+.profile {
+  margin-top: auto;
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-top: 1px solid #e0e0e0;
+  transition: background-color 0.3s ease;
+}
+
+.profile:hover {
+  background-color: #f8f9fa;
+}
+
+.user-avatar {
+  background: linear-gradient(135deg, #4285F4, #34a853);
+  color: white;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 18px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile:hover .user-avatar {
+  transform: scale(1.1);
+  box-shadow: 0 4px 10px rgba(66, 133, 244, 0.3);
+}
+
+.user-info {
+  transition: transform 0.3s ease;
+}
+
+.profile:hover .user-info {
+  transform: translateX(5px);
+}
+
+.user-name {
+  font-weight: 500;
+  color: #333;
+}
+
+.view-profile {
+  font-size: 12px;
+  color: #4285F4;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.view-profile:hover {
+  color: #2b5cd9;
+  text-decoration: underline;
+}
+
+/* Dashboard Content */
+.dashboard-content {
+  flex: 1;
+  padding: 32px;
+  background-color: #f9fafc;
+  overflow-y: auto;
+  transition: padding 0.3s ease;
+}
+
+/* Header styles */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  height: 60px;
+  background-color: #f1f1f1;
+  border-bottom: 1px solid #ddd;
+}
+
+.brand-name {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+
+.page-title {
+  font-size: 18px;
+  font-weight: normal;
+  color: #333;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.notification-icon {
+  position: relative;
+  cursor: pointer;
+}
+
+.notification-icon .badge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background-color: #4285F4;
+  color: white;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+}
+
+.user-initials {
+  background-color: #f8f8f8;
+  color: #333;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  cursor: pointer;
+  border: 1px solid #ddd;
+}
+
+/* Animation keyframes */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
