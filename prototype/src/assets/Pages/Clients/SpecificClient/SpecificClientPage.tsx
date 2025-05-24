@@ -2,8 +2,8 @@
 import ClientInformation from "./ClientInformation.tsx";
 import Goals from "./ClientsGoals.tsx";
 import ClientOverwie from "./ClientOverwie.tsx";
-
 import NutritionChart from "./ClientNutritionWheel.tsx";
+import "./SpecificClientPage.css";
 
 
 function SpecificClientPage() {

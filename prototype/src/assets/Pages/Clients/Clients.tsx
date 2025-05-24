@@ -3,9 +3,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faArrowUpRightFromSquare, faEdit, faPlus, faSearch, faTrash, faUser} from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 //import { Link } from "react-router-dom";
+import "./Clients.css";
+import AddClient from '../pop-ups/Add-Client';
+import React, { useState } from 'react';
 
 function Clients() {
-    const clients = [
+    const [isAddClientOpen, setIsAddClientOpen] = useState(false);
+    const [clients, setClients] = useState([
         {
             id: 1,
             name: "John Smith",
@@ -28,8 +32,21 @@ function Clients() {
             phone: 858555845,
             programId: 1
         },
+    ]);
 
-    ]
+    const handleAddClient = (newClient) => {
+        // Create a new client object with an ID
+        const client = {
+            id: clients.length > 0 ? Math.max(...clients.map(c => c.id)) + 1 : 1,
+            name: `${newClient.firstName} ${newClient.lastName}`,
+            email: newClient.email,
+            phone: newClient.phone,
+            programId: newClient.programId
+        };
+
+        // Add the new client to the clients array
+        setClients([...clients, client]);
+    };
     const programList = [
         {
             id: 0,
@@ -59,7 +76,7 @@ function Clients() {
                             placeholder="Search clients..."
                         />
                     </div>
-                    <button className="add-client-btn">
+                    <button className="add-client-btn" onClick={() => setIsAddClientOpen(true)}>
                         <FontAwesomeIcon icon={faPlus}/>
                         <span>Add Client</span>
                     </button>
@@ -107,6 +124,13 @@ function Clients() {
                     </div></Link>))}
 
             </div>
+
+            <AddClient 
+                isOpen={isAddClientOpen}
+                onClose={() => setIsAddClientOpen(false)}
+                onAddClient={handleAddClient}
+                programs={programList}
+            />
         </>
     );
 }

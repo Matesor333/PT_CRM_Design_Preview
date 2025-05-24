@@ -1,5 +1,6 @@
 import { Outlet } from "react-router-dom";
 import Navigation from "./Navigation.tsx";
+import "./Layout.css";
 
 function Layout() {
     return (

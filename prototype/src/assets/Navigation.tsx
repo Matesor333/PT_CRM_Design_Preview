@@ -1,4 +1,4 @@
-import {faCalendarAlt, faCalendarCheck, faLayerGroup, faTasks, faThLarge, faUsers, faBars, faChevronLeft} from "@fortawesome/free-solid-svg-icons";
+import {faCalendarAlt, faCalendarCheck, faLayerGroup, faTasks, faThLarge, faUsers, faBars, faChevronLeft, faEnvelope} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link, useLocation } from "react-router-dom";
 import { useState } from "react";
@@ -38,7 +38,7 @@ function Navigation() {
                         </Link>
                     </li>
                     <li className="nav-item">
-                        <Link to="#">
+                        <Link to="/programs">
                             <FontAwesomeIcon icon={faLayerGroup} />
                             <span>Programs</span>
                         </Link>
@@ -59,6 +59,12 @@ function Navigation() {
                         <Link to="/callendar">
                             <FontAwesomeIcon icon={faCalendarAlt} />
                             <span>Calendar</span>
+                        </Link>
+                    </li>
+                    <li className="nav-item">
+                        <Link to="/messages">
+                            <FontAwesomeIcon icon={faEnvelope} />
+                            <span>Messages</span>
                         </Link>
                     </li>
                 </ul>

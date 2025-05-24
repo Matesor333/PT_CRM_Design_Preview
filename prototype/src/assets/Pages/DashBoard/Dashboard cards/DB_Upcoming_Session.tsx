@@ -22,7 +22,7 @@ function UpcomingSession() {
                 <div className="Alert-Header">
                     <div className="Alert-Header-Name">Name</div>
                     <div className="Alert-Header-Date">Date</div>
-                    <div className="Alert-Header-Calendar"><Link to="/prototype/src/assets/Pages/Clients/SpecificClient/SpecificClientPage.tsx">
+                    <div className="Alert-Header-Calendar"><Link to="/callendar">
                         View Calendar
                     </Link></div>
                 </div>
