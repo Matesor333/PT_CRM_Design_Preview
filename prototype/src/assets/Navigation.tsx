@@ -2,14 +2,27 @@ import {faCalendarAlt, faCalendarCheck, faLayerGroup, faTasks, faThLarge, faUser
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link, useLocation } from "react-router-dom";
 import { useState } from "react";
+import ProfilePopUp from './Pages/View-Profie/Profile-Pop-Up';
 
 function Navigation() {
     const location = useLocation();
     const currentPath = location.pathname;
     const [isCollapsed, setIsCollapsed] = useState(false);
+    const [isProfilePopupOpen, setIsProfilePopupOpen] = useState(false);
 
     const toggleNavigation = () => {
         setIsCollapsed(!isCollapsed);
+    };
+
+    // Toggle profile popup
+    const toggleProfilePopup = (e) => {
+        e.preventDefault();
+        setIsProfilePopupOpen(!isProfilePopupOpen);
+    };
+
+    // Close profile popup
+    const closeProfilePopup = () => {
+        setIsProfilePopupOpen(false);
     };
 
     return (
@@ -73,11 +86,17 @@ function Navigation() {
                     <div className="user-avatar">PT</div>
                     <div className="user-info">
                         <div className="user-name">Trainer Account</div>
-                        <Link to="#" className="view-profile">View Profile</Link>
+                        <Link to="#" className="view-profile" onClick={toggleProfilePopup}>View Profile</Link>
                     </div>
                 </div>
             </nav>
+
+            {/* Profile Popup */}
+            <ProfilePopUp 
+                isOpen={isProfilePopupOpen} 
+                onClose={closeProfilePopup} 
+            />
         </div>
-    )
+    );
 }
 export default Navigation;
