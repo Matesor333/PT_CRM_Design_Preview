@@ -1,8 +1,15 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowUpRightFromSquare, faEdit, faPlus, faSearch, faTrash } from '@fortawesome/free-solid-svg-icons';
+import { useNavigate } from 'react-router-dom';
 import './Programs.css';
 
 function Programs(){
+    const navigate = useNavigate();
+
+    const handleProgramClick = (programId) => {
+        navigate(`/programs/${programId}`);
+    };
+
     const programsList = [
         {
             id: 1,
@@ -43,11 +50,23 @@ function Programs(){
             </div>
             <div className="programs-grid">
                 {programsList.map(program => (
-                    <div className="program-card" key={program.id}>
+                    <div 
+                        className="program-card" 
+                        key={program.id} 
+                        onClick={() => handleProgramClick(program.id)}
+                        style={{ cursor: 'pointer' }}
+                    >
                         <div className="program-header">
                             <h3 className="program-name">{program.name}</h3>
-                            <div className="program-actions">
-                                <button className="action-btn view-btn" title="View">
+                            <div className="program-actions" onClick={(e) => e.stopPropagation()}>
+                                <button 
+                                    className="action-btn view-btn" 
+                                    title="View"
+                                    onClick={(e) => {
+                                        e.stopPropagation();
+                                        handleProgramClick(program.id);
+                                    }}
+                                >
                                     <FontAwesomeIcon icon={faArrowUpRightFromSquare}/>
                                 </button>
                                 <button className="action-btn edit-btn" title="Edit">

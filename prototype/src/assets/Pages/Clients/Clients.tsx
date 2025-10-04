@@ -12,24 +12,82 @@ function Clients() {
     const [clients, setClients] = useState([
         {
             id: 1,
-            name: "John Smith",
+            firstName: "John",
+            lastName: "Smith",
             email: "john.smith@example.com",
             phone: "(555) 123-4567",
             programId: 0
         },
-
         {
             id: 2,
-            name: "Alberta Neviem",
+            firstName: "Alberta",
+            lastName: "Neviem",
             email: "Alberta@example.com",
             phone: 858555845,
             programId: 0
         },
         {
             id: 3,
-            name: "Matus Ill",
+            firstName: "Matus",
+            lastName: "Ill",
             email: "Matus@example.com",
             phone: 858555845,
+            programId: 1
+        },
+        {
+            id: 4,
+            firstName: "Sarah",
+            lastName: "Johnson",
+            email: "sarah.johnson@example.com",
+            phone: "(555) 234-5678",
+            programId: 1
+        },
+        {
+            id: 5,
+            firstName: "Michael",
+            lastName: "Brown",
+            email: "michael.brown@example.com",
+            phone: "(555) 345-6789",
+            programId: 0
+        },
+        {
+            id: 6,
+            firstName: "Emily",
+            lastName: "Davis",
+            email: "emily.davis@example.com",
+            phone: "(555) 456-7890",
+            programId: 1
+        },
+        {
+            id: 7,
+            firstName: "David",
+            lastName: "Wilson",
+            email: "david.wilson@example.com",
+            phone: "(555) 567-8901",
+            programId: 0
+        },
+        {
+            id: 8,
+            firstName: "Jessica",
+            lastName: "Martinez",
+            email: "jessica.martinez@example.com",
+            phone: "(555) 678-9012",
+            programId: 1
+        },
+        {
+            id: 9,
+            firstName: "Robert",
+            lastName: "Taylor",
+            email: "robert.taylor@example.com",
+            phone: "(555) 789-0123",
+            programId: 0
+        },
+        {
+            id: 10,
+            firstName: "Jennifer",
+            lastName: "Anderson",
+            email: "jennifer.anderson@example.com",
+            phone: "(555) 890-1234",
             programId: 1
         },
     ]);
@@ -38,7 +96,8 @@ function Clients() {
         // Create a new client object with an ID
         const client = {
             id: clients.length > 0 ? Math.max(...clients.map(c => c.id)) + 1 : 1,
-            name: `${newClient.firstName} ${newClient.lastName}`,
+            firstName: newClient.firstName,
+            lastName: newClient.lastName,
             email: newClient.email,
             phone: newClient.phone,
             programId: newClient.programId
@@ -93,7 +152,7 @@ function Clients() {
                         </div>
                         <div className="client-info">
                             <div className="client-header">
-                                <h3 className="client-name">{allClient.name}</h3>
+                                <h3 className="client-name">{allClient.firstName} {allClient.lastName}</h3>
                                 <div className="client-actions">
                                     <button className="action-btn view-btn" title="View">
                                         <FontAwesomeIcon icon={faArrowUpRightFromSquare}/>
