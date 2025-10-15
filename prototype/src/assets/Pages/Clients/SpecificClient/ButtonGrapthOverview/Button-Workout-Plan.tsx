@@ -1,13 +1,15 @@
 
-import React, { useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import '../SpecificClientPage.css';
 import AddWorkoutPlan from "../../../pop-ups/Add-Workout-Plan.tsx";
-
+import WorkoutPlanProgressModal, { WorkoutPlanShape } from './WorkoutPlanProgressModal';
 
 const WorkoutTracker = () => {
     const [isAddWorkoutOpen, setIsAddWorkoutOpen] = useState(false);
+    const [isProgressOpen, setIsProgressOpen] = useState(false);
+    const [selectedPlan, setSelectedPlan] = useState<WorkoutPlanShape | null>(null);
 
     // Function to handle adding a new workout
     const handleAddWorkout = () => {
@@ -20,6 +22,33 @@ const WorkoutTracker = () => {
         // Here you would typically add the workout plan to your state or database
         // For now, we'll just log it to the console
     };
+
+    // Sample plan to demonstrate the progress modal (structure mirrors Add-Workout-Plan)
+    const samplePlan: WorkoutPlanShape = useMemo(() => ({
+        name: 'Hypertrophy Block',
+        weeks: 8,
+        startDate: '2025-05-12',
+        days: [
+            {
+                id: 1,
+                name: 'Day 1 - Upper',
+                exercises: [
+                    { id: 11, name: 'Bench Press', sets: 4, repRange: '6-8', restTime: '120s', tempo: '2-0-2-0' },
+                    { id: 12, name: 'Incline DB Press', sets: 3, repRange: '8-12', restTime: '90s', tempo: '2-0-2-0' },
+                    { id: 13, name: 'Lat Pulldown', sets: 3, repRange: '10-12', restTime: '75s', tempo: '2-1-2-0' }
+                ]
+            },
+            {
+                id: 2,
+                name: 'Day 2 - Lower',
+                exercises: [
+                    { id: 21, name: 'Back Squat', sets: 5, repRange: '3-5', restTime: '150s', tempo: '2-1-2-1' },
+                    { id: 22, name: 'RDL', sets: 3, repRange: '6-8', restTime: '120s', tempo: '3-0-2-0' },
+                    { id: 23, name: 'Leg Press', sets: 3, repRange: '10-12', restTime: '90s', tempo: '2-0-2-0' }
+                ]
+            }
+        ]
+    }), []);
 
     // Sample data for current workouts - you would replace this with your actual data
     const currentWorkouts = [
@@ -53,6 +82,11 @@ const WorkoutTracker = () => {
         }
     ];
 
+    const openProgress = () => {
+        setSelectedPlan(samplePlan);
+        setIsProgressOpen(true);
+    };
+
     return (
         <div className="workout-tracker">
             {/* Current Workouts Section */}
@@ -68,7 +102,7 @@ const WorkoutTracker = () => {
                     </button>
                 </div>
                 {currentWorkouts.map(workout => (
-                    <div key={workout.id} className="workout-card">
+                    <div key={workout.id} className="workout-card" onClick={openProgress} role="button" tabIndex={0}>
                         <h3>{workout.week}</h3>
                         <p>Focus: {workout.focus}</p>
                         <p>Notable achievements: {workout.achievements}</p>
@@ -80,7 +114,7 @@ const WorkoutTracker = () => {
             <div className="past-workouts">
                 <h2>Past Workout Plans</h2>
                 {pastWorkouts.map(workout => (
-                    <div key={workout.id} className="workout-card">
+                    <div key={workout.id} className="workout-card" onClick={openProgress} role="button" tabIndex={0}>
                         <h3>{workout.week}</h3>
                         <p>Focus: {workout.focus}</p>
                         <p>Notable achievements: {workout.achievements}</p>
@@ -89,10 +123,16 @@ const WorkoutTracker = () => {
             </div>
 
             <AddWorkoutPlan
-
                 isOpen={isAddWorkoutOpen}
                 onClose={() => setIsAddWorkoutOpen(false)}
-                onAddWorkoutPlan={handleAddWorkoutPlan}/>
+                onAddWorkoutPlan={handleAddWorkoutPlan}
+            />
+
+            <WorkoutPlanProgressModal
+                isOpen={isProgressOpen}
+                onClose={() => setIsProgressOpen(false)}
+                workoutPlan={selectedPlan}
+            />
         </div>
     );
 };

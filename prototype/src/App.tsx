@@ -9,6 +9,7 @@ import Callendar from "./assets/Pages/Callendar/Callendar.tsx";
 import Programs from "./assets/Pages/Programs/Programs.tsx";
 import Program from "./assets/Pages/Programs/Specific Program/SpecificProgram.tsx";
 import Messages from "./assets/Pages/Messages/Messages.tsx";
+import Notes from "./assets/Pages/Notes/Notes.tsx";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path="/programs/:programId" element={<Program/>}/>
           <Route path="/callendar" element={<Callendar/>}/>
           <Route path="/messages" element={<Messages/>}/>
+          <Route path="/notes" element={<Notes/>}/>
           <Route path="prototype/src/assets/Pages/Clients/SpecificClient/SpecificClientPage.tsx" element={<SpecificClientPage/>}/>
 
         </Route>

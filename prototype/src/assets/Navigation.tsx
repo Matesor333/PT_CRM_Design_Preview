@@ -50,34 +50,30 @@ function Navigation() {
                             <span>Clients</span>
                         </Link>
                     </li>
-                    <li className="nav-item">
+                    <li className={`nav-item ${currentPath === "/programs" ? "active" : ""}`}>
                         <Link to="/programs">
                             <FontAwesomeIcon icon={faLayerGroup} />
                             <span>Programs</span>
                         </Link>
                     </li>
-                    <li className="nav-item">
-                        <Link to="#">
-                            <FontAwesomeIcon icon={faCalendarCheck} />
-                            <span>Schedule</span>
-                        </Link>
-                    </li>
-                    <li className="nav-item">
-                        <Link to="#">
-                            <FontAwesomeIcon icon={faTasks} />
-                            <span>Tasks</span>
-                        </Link>
-                    </li>
-                    <li className="nav-item">
+
+
+                    <li className={`nav-item ${currentPath === "/callendar" ? "active" : ""}`}>
                         <Link to="/callendar">
                             <FontAwesomeIcon icon={faCalendarAlt} />
                             <span>Calendar</span>
                         </Link>
                     </li>
-                    <li className="nav-item">
+                    <li className={`nav-item ${currentPath === "/messages" ? "active" : ""}`}>
                         <Link to="/messages">
                             <FontAwesomeIcon icon={faEnvelope} />
                             <span>Messages</span>
+                        </Link>
+                    </li>
+                    <li className={`nav-item ${currentPath === "/notes" ? "active" : ""}`}>
+                        <Link to="/notes">
+                            <FontAwesomeIcon icon={faTasks} />
+                            <span>Notes</span>
                         </Link>
                     </li>
                 </ul>

@@ -104,13 +104,6 @@ function ProfilePopUp({ isOpen, onClose }: ProfilePopUpProps) {
                                     Subscription & Billing
                                 </button>
                                 <button 
-                                    className={`settings-tab ${activeTab === 'clients' ? 'active' : ''}`} 
-                                    onClick={() => setActiveTab('clients')}
-                                >
-                                    <span className="tab-icon">👥</span>
-                                    Client Management
-                                </button>
-                                <button 
                                     className={`settings-tab ${activeTab === 'security' ? 'active' : ''}`} 
                                     onClick={() => setActiveTab('security')}
                                 >
@@ -146,59 +139,6 @@ function ProfilePopUp({ isOpen, onClose }: ProfilePopUpProps) {
                                 <Subscription/>
                             </div>
 
-
-                            <div className={`settings-tab-content ${activeTab === 'clients' ? 'active' : ''}`} id="clients-tab">
-                                <div className="cards-grid">
-                                    <div className="card">
-                                        <div className="card__body">
-                                            <h3 className="section-title">Client Limits & Usage</h3>
-                                            <div className="client-stats">
-                                                <div className="stat-item">
-                                                    <div className="stat-label">Current Active Clients</div>
-                                                    <div className="stat-value">28 of 50</div>
-                                                    <div className="stat-bar">
-                                                        <div className="stat-fill" style={{ width: '56%' }}></div>
-                                                    </div>
-                                                </div>
-                                                <div className="stat-item">
-                                                    <div className="stat-label">Total Clients Managed</div>
-                                                    <div className="stat-value">45</div>
-                                                </div>
-                                                <div className="stat-item">
-                                                    <div className="stat-label">Available Client Slots</div>
-                                                    <div className="stat-value">22</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div className="card">
-                                        <div className="card__body">
-                                            <h3 className="section-title">Default Session Settings</h3>
-                                            <div className="form-grid">
-                                                <div className="form-group">
-                                                    <label className="form-label">Default Session Duration</label>
-                                                    <select className="form-control">
-                                                        <option value="30">30 minutes</option>
-                                                        <option value="45">45 minutes</option>
-                                                        <option value="60" selected>60 minutes</option>
-                                                        <option value="90">90 minutes</option>
-                                                    </select>
-                                                </div>
-                                                <div className="form-group">
-                                                    <label className="form-label">Default Reminder Time</label>
-                                                    <select className="form-control">
-                                                        <option value="2">2 hours before</option>
-                                                        <option value="4">4 hours before</option>
-                                                        <option value="24" selected>24 hours before</option>
-                                                        <option value="48">48 hours before</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
 
 
                             <div className={`settings-tab-content ${activeTab === 'security' ? 'active' : ''}`} id="security-tab">

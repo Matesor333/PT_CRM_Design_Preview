@@ -11,7 +11,7 @@ function ClientInformation(){
         age:"46 (01.01.1979)",
         heightMetric:"197",
         weightMetric:"90",
-        medicalInfo:"I will kill my self soon",
+        medicalInfo:"Celiac Desiese",
         status:"active",
         clientSince:"Inavlid Date"
 

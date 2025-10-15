@@ -12,7 +12,7 @@ function SpecificClientPage() {
         <>
             <div className="specific-footer">
                 <button className="back-button">Back</button>
-                <h2>Jhon Smith</h2>
+                <h2>John Smith</h2>
                 <button className="schedule-sesion">Schedule Session</button>
                 <button className="new-task">New Task</button>
             </div>

@@ -309,12 +309,128 @@
   border: none;
   border-radius: 8px;
   padding: 10px 16px;
+}
+
+/* Workout Plan Progress Modal + Excel-like table */
+.progress-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.progress-modal {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+  width: min(1000px, 95vw);
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.progress-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.progress-modal-header h2 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.progress-meta {
+  display: flex;
+  gap: 16px;
+  padding: 12px 20px;
+  font-size: 0.9rem;
+  color: #555;
+  border-bottom: 1px solid #f2f2f2;
+}
+
+.excel-table {
+  overflow: auto;
+  padding: 10px 0 0 0;
+}
+
+.excel-row {
+  display: grid;
+  grid-template-columns: 280px repeat(12, 1fr);
+  align-items: stretch;
+}
+
+.excel-header {
+  position: sticky;
+  top: 0;
+  background: #fafafa;
+  z-index: 2;
+  border-bottom: 1px solid #eee;
+}
+
+.excel-cell {
+  padding: 10px 12px;
+  border-bottom: 1px solid #f0f0f0;
+  border-right: 1px solid #f7f7f7;
+  min-width: 100px;
+}
+
+.sticky-left {
+  position: sticky;
+  left: 0;
+  background: #fff;
+  z-index: 3;
+  min-width: 260px;
+  box-shadow: 2px 0 0 rgba(0,0,0,0.03);
+}
+
+.day-divider .sticky-left {
+  background: #f7fbff;
+}
+
+.day-divider .day-spacer {
+  background: #f7fbff;
+}
+
+.exercise-name {
+  font-weight: 600;
+  color: #222;
+}
+
+.exercise-meta {
+  font-size: 12px;
+  color: #888;
+  margin-top: 4px;
+}
+
+.excel-input {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
   font-size: 14px;
-  font-weight: 500;
-  color: white;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background: #fafafa;
+}
+
+.excel-input:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 0 3px rgba(52,152,219,0.15);
+  background: #fff;
+}
+
+.progress-actions {
+  padding: 12px 20px;
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  border-top: 1px solid #eee;
 }
 
 .Tracker:hover {

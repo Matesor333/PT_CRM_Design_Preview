@@ -1,5 +1,7 @@
 function Subscription(){
-    return (<div className="cards-grid">
+    return (
+
+        <div className="cards-grid">
 
         <div className="card">
             <div className="card__body">
@@ -12,7 +14,7 @@ function Subscription(){
                         </div>
                         <div className="plan-status">
                             <span className="status status--success">Active</span>
-                            <div className="renewal-info">Auto-renews Nov 4, 2025</div>
+                            <div className="renewal-info">Renews November 4, 2025</div>
                         </div>
                     </div>
                     <div className="plan-features">
@@ -62,7 +64,7 @@ function Subscription(){
 
         <div className="card full-width">
             <div className="card__body">
-                <h3 className="section-title">Plan Management</h3>
+                <h3 className="section-title">Available Plans</h3>
                 <div className="plan-options">
                     <div className="plan-option">
                         <h5>Starter Plan</h5>
@@ -75,6 +77,7 @@ function Subscription(){
                         <button className="btn btn--outline">Downgrade</button>
                     </div>
                     <div className="plan-option current">
+                        <div className="current-plan-badge">Current Plan</div>
                         <h5>Professional Plan</h5>
                         <div className="plan-price">$49.99/month</div>
                         <div className="plan-features-list">
