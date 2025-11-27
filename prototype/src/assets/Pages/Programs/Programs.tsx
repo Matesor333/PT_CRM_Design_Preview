@@ -88,7 +88,7 @@ function Programs(){
                                     <span className="date-label">End:</span>
                                     <span className={`date-value ${program.endDate === null ? 'no-end' : ''}`}>
                                         {program.endDate || 'Ongoing'}
-                                    </span>
+                                    </span>n
                                 </div>
                             </div>
                         </div>
