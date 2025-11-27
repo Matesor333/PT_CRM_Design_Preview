@@ -266,6 +266,8 @@ const Notes: React.FC = () => {
     };
 
     const handleKeyDown = (e: React.KeyboardEvent, blockId: string) => {
+        const currentBlock = blocks.find(b => b.id === blockId);
+
         if (e.key === '/' && e.currentTarget.textContent === '') {
             e.preventDefault();
             const rect = e.currentTarget.getBoundingClientRect();
@@ -274,7 +276,16 @@ const Notes: React.FC = () => {
             setShowSlashMenu(true);
         } else if (e.key === 'Enter') {
             e.preventDefault();
-            addBlock(blockId);
+            let nextType: Block['type'] = 'paragraph';
+            if (currentBlock && ['bullet', 'number', 'todo'].includes(currentBlock.type)) {
+                nextType = currentBlock.type;
+            }
+            addBlock(blockId, nextType);
+        } else if (e.key === 'Backspace') {
+            if (currentBlock && currentBlock.content === '' && ['bullet', 'number', 'todo'].includes(currentBlock.type)) {
+                e.preventDefault();
+                changeBlockType(blockId, 'paragraph');
+            }
         }
     };
 
@@ -287,6 +298,13 @@ const Notes: React.FC = () => {
             } : block
         ));
         setShowSlashMenu(false);
+
+        setTimeout(() => {
+            const blockElement = document.querySelector(`[data-block-id="${blockId}"]`);
+            if (blockElement) {
+                (blockElement as HTMLElement).focus();
+            }
+        }, 0);
     };
 
     const toggleTodo = (blockId: string) => {
@@ -295,7 +313,7 @@ const Notes: React.FC = () => {
         ));
     };
 
-    const renderBlock = (block: Block) => {
+    const renderBlock = (block: Block, index: number) => {
         const commonProps = {
             key: block.id,
             'data-block-id': block.id,
@@ -374,11 +392,18 @@ const Notes: React.FC = () => {
                     </div>
                 );
             case 'number':
+                let number = 1;
+                let i = index - 1;
+                while (i >= 0 && blocks[i].type === 'number') {
+                    number++;
+                    i--;
+                }
+
                 return (
                     <div className="block-wrapper list-item" key={block.id}>
                         {renderControls()}
                         <div className="list-wrapper">
-                            <span className="number">1.</span>
+                            <span className="number">{number}.</span>
                             <EditableElement
                                 tagName="div"
                                 content={block.content}
